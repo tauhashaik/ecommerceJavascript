@@ -1,20 +1,23 @@
 /* INDEX PAGE */
 
-body{
+#homeBody{
     background-color: black !important;
+    background-image: url(https://i.postimg.cc/BQ4LCCXd/background-4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #homeHeader{
-    color: yellow;
+    color: blue;
     justify-content: center;
     display: flex;
     margin-top: 60px;
     font-size: 120px;
-    
+    font-family: "Audiowide", sans-serif;
 }
 
 #slogan{
-    color: yellow;
+    color: blue;
     justify-content: center;
     display: flex;
     font-size: 35px;
@@ -22,6 +25,9 @@ body{
 
 #navBar{
     position: sticky;
+    top: 0;
+    z-index: 100;
+    opacity: 0.9;
 }
 
 #Logo{
@@ -33,6 +39,23 @@ body{
 .container-fluid{
     background-color: yellow;
 }
+
+#searchButt{
+    color: black;
+    border-color: blue;
+    border: 3px solid;
+}
+#searchButt:hover{
+    color: white;
+    background-color: black;
+    transition: 0.4s;
+}
+#searchBar{
+    color: black;
+    border-color: blue;
+    border: 3px solid;
+}
+
 
 #navText{
     font-size: larger;
@@ -52,6 +75,7 @@ body{
 #slideImage{
     width: 300px;
     height: 300px;
+    opacity: 0.5;
 }
 #footer{
     color: white;
@@ -61,6 +85,30 @@ body{
 }
 
 /* ABOUT US PAGE */
+
+#aboutBody{
+    background-color: black;
+}
+#aboutHeader{
+    color: blue;
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+    font-size: 120px;
+    font-family: "Audiowide", sans-serif;
+}
+
+h2{
+    color: yellow !important;
+    font-family: "Audiowide", sans-serif;
+}
+
+#ab{
+    font-size: larger;
+    border: 2px solid yellow;
+    padding: 10px;
+    color: yellow;
+}
 
 @keyframes RunBoi {
     0%{
@@ -75,7 +123,7 @@ body{
 
 #Pika {
   animation-name: RunBoi;
-  animation-duration: 5s; /* Change this value to adjust the speed */
+  animation-duration: 5s;
   position: relative;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;

@@ -104,7 +104,7 @@
     background-color: black;
 }
 #aboutHeader{
-    color: blue;
+    color: yellow;
     justify-content: center;
     display: flex;
     margin-top: 60px;
@@ -122,6 +122,7 @@ h2{
     border: 2px solid yellow;
     padding: 10px;
     color: yellow;
+    font-family: Audiowide;
 }
 
 @keyframes RunBoi {
@@ -144,6 +145,9 @@ h2{
 }
 
 /* Admin Page */
+.modal-body{
+    background-color: black;
+}
 #adminBody{
     background-color: black;
 }
@@ -164,12 +168,72 @@ h2{
     border-radius: 12px;
     font-weight: bolder;
 }
+#adminButt1{
+    color: red;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 12px;
+    font-weight: bolder;
+}
+#adminButt2{
+    color: red;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 12px;
+    font-weight: bolder;
+}
 
 #adminButt:hover{
     scale: 1.2;
     /* transition: 0.3s; */
     background-color: red;
     color: black;
+}
+#adminButt1:hover{
+    /* transition: 0.3s; */
+    background-color: red;
+    color: black;
+}
+#adminButt2:hover{
+    /* transition: 0.3s; */
+    background-color: red;
+    color: black;
+}
+
+
+#modalHead{
+    justify-content: center;
+    color: yellow;
+    text-align: center !important;
+    font-family: Audiowide;
+    font-size: larger;
+    margin-left: 42rem;
+    text-shadow: 0px 0px 12px white !important;
+}
+
+#modalP{
+    color: yellow;
+    font-family: Audiowide;
+    margin-top: 10px;
+    text-shadow: 0px 0px 12px white !important;
+    font-size: large;
+}
+
+#input1{
+    border: solid 2px red;
+    box-shadow: 0px 0px 7px red;
+}
+#input2{
+    border: solid 2px red;
+    box-shadow: 0px 0px 7px red;
+}
+#input3{
+    border: solid 2px red;
+    box-shadow: 0px 0px 7px red;
+}
+#input4{
+    border: solid 2px red;
+    box-shadow: 0px 0px 7px red;
 }
 
 /* Product Page */
@@ -223,4 +287,10 @@ footer{
 #spinny{
     justify-content: center;
     align-items: center;
+}
+
+/* Checkout page */
+
+#checkoutBody{
+    background-color: black;
 }

@@ -51,6 +51,7 @@ let table = document.querySelector('table');
 window.onload=function toProducts(){
     let products = pokeItems.map(function(item, index){
         return `
+            
         <tr>
             <td style = "color: yellow; background-color: red; padding-top: 40px">${item.id}</td>
             <td style = "color: yellow; background-color: black; font-size: 20px; padding-top: 40px">${item.name}</td>
@@ -92,3 +93,24 @@ table.addEventListener('click',function(){
         // alert(`Are you sure you want to delete`)
     }
 });
+
+// Modal Section.
+
+function Addnewproduct(){
+    let name = document.getElementById('input1').value
+    let description = document.getElementById('input2').value
+    let price = document.getElementById('input3').value
+    let url = document.getElementById('input4').value
+    let createNewProduct = new Createobjects(pokeItems.length +1, name, description, price, url);
+
+    pokeItems.push(createNewProduct);
+
+    itemSave();
+
+
+    window.onload();
+}
+
+let saveChanges=document.getElementById('adminButt2');
+
+saveChanges.addEventListener('click',Addnewproduct);

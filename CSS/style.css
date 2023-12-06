@@ -204,3 +204,18 @@ footer{
     color: black !important;
     font-weight: bolder;
 }
+
+#sortButt{
+    color: red;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 12px;
+    font-weight: bolder;
+}
+
+#sortButt:hover{
+    scale: 1.2;
+    transition: 0.3s;
+    background-color: red;
+    color: black;
+}

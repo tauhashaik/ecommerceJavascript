@@ -22,11 +22,14 @@ main.innerHTML = pokeItems.map(function(item, index){
     `
 })
 
+
+// Search Section.
+
 // function to update the 'main' element with the provided items in array.
 displayItems(pokeItems)
 
 let searchBox = document.querySelector('form');
-// Functionailty added to search button. event.preventDefault() to handle submission in a custom manner to update without having to reload the page again.
+// Functionailty added to search button.'keyup' used to search after every character entered into search input instead of having to click submit or search button. prevent.preventDefault() to handle submission in a custom manner to update without having to reload the page again.
 searchBar.addEventListener('keyup', function(event){
     event.preventDefault();
     // search bar given variable and made the input value case insensitive.
@@ -61,6 +64,8 @@ function displayItems(filteredSearch){
         `
 })
 }
+
+// Spinner Section.
 
 // Creation o spinner with appropriate id's, class names, and attributes and div element for the spinner to be inserted in.
 let spinner = document.createElement('div');
@@ -103,3 +108,5 @@ function spin(){
         alert("No Products")
     }
 }
+
+// Sorting Section.

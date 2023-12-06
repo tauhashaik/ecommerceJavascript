@@ -219,3 +219,8 @@ footer{
     background-color: red;
     color: black;
 }
+
+#spinny{
+    justify-content: center;
+    align-items: center;
+}

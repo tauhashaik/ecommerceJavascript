@@ -67,27 +67,19 @@ function displayItems(filteredSearch){
 
 // Spinner Section.
 
-// Creation o spinner with appropriate id's, class names, and attributes and div element for the spinner to be inserted in.
-let spinner = document.createElement('div');
-spinner.id = 'spinny';
-spinner.className = 'spinner-border text-danger';
-spinner.setAttribute('role','status');
-spinner.innerHTML = '<span class="visually-hidden">Loading...</span>'
-
-// ensuring the spinner is added before the main element in HTML.
-main.parentNode.insertBefore(spinner, main);
 
 // function created with a condition to display spinner if no products are present and removed from the array and if products are still present then hide the spinner.
-function spin(){
-    let mainProd = document.getElementById('mainProd');
-    let spinner = document.getElementById('spinny');
     
     // condition to make sure th espinner is only dispayed if there are no products(array>0) and to display spinner when there are no products.
-    if (filteredSearch.length > 0 ){
-        mainProd.style.display = 'block';
-        spinner.style.display = 'none';
+    if (pokeItems.length === 0 ){
+      
+        main.innerHTML = `<div id="spinny" class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>`
 
-        main.innerHTML=filteredSearch.map(function(item, index){
+    }
+    else{
+        main.innerHTML=pokeItems.map(function(item, index){
             return `
             <div id="cards" class="col-lg-3 d-flex justify-content-center">
                 <div class="card h-100" style="width: 18rem;">
@@ -101,12 +93,24 @@ function spin(){
                 </div>
             </div>`;
         }).join('');
+        
     }
-    else{
-        mainProd.style.display = 'none';
-        spinner.style.display = 'block';
-        alert("No Products")
-    }
-}
 
 // Sorting Section.
+
+// Function created to sort products by price from highest to lowest and display it in that order.
+function sorting(){
+
+    // using a ternirary operator we create a new array from the pokeItems array a asssign it a variable sorted. Using the sort method we restructure the array accodring to the price from highest to lowest as indicated by the second value in the array - the first value and if it is postive it will sort it by placing the highest values first then the lowest until all values in the array are correctly rearranged.
+    let sorted = [...pokeItems];
+    sorted.sort((a,b) => b.price - a.price);
+
+    // display the sorted products.
+    displayItems(sorted);
+}
+
+let sortButt = document.getElementById('sortButt');
+// adding functionality to th esort button to perfom the sorting function.
+sortButt.addEventListener('click', function(){
+    sorting();
+});

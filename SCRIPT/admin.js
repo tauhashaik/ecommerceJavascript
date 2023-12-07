@@ -48,9 +48,10 @@ pokeItems = JSON.parse(localStorage.getItem('pokeItems'));
 let table = document.querySelector('table');
 
 // Creating function to map through array of pokeItems and append them to the table
-window.onload=function toProducts(){
+function toProducts(){
     let products = pokeItems.map(function(item, index){
         return `
+            
         <tr>
             <td style = "color: yellow; background-color: red; padding-top: 40px">${item.id}</td>
             <td style = "color: yellow; background-color: black; font-size: 20px; padding-top: 40px">${item.name}</td>
@@ -65,12 +66,14 @@ window.onload=function toProducts(){
     // display the above information in the table of admin HTML.
     table.innerHTML = products.join('');
 }
+toProducts()
 
 // function to set to local storage and call/get from local storage.
 function itemSave() {
     localStorage.setItem('pokeItems',JSON.stringify(pokeItems))
 
     items = JSON.parse(localStorage.getItem('pokeItems'));
+    toProducts()
 };
 
 // setting variable to delete button using queryselector.
@@ -80,7 +83,7 @@ let deleteButton = document.querySelector('.deleteBtn');
 function deletes(position){
     pokeItems.splice(position, 1);
     itemSave();
-    window.onload()
+    toProducts();
 }
 
 //  This adds funtionality to the button to delete said item from array 'pokeItems' by assigning the function name deletes to it when clicked.This also includes a condition that checks that the button that was clicked matches the class of '.deleteBtn' using The method 'matches' which if it is returned true it will run the follwoing code, if false it will not run the following code. The next line of code assiagns a variable of 'position' to the value of the button.The follwing code to run would be the function 'deletes(position)' to remove the item from the array using splice.
@@ -92,3 +95,23 @@ table.addEventListener('click',function(){
         // alert(`Are you sure you want to delete`)
     }
 });
+
+// Modal Section.
+
+function Addnewproduct(){
+    let name = document.getElementById('input1').value
+    let description = document.getElementById('input2').value
+    let price = document.getElementById('input3').value
+    let url = document.getElementById('input4').value
+    let createNewProduct = new Createobjects(pokeItems.length +1, name, description, price, url);
+
+    pokeItems.push(createNewProduct);
+
+    itemSave();
+    
+    toProducts();
+}
+
+let saveChanges=document.getElementById('adminButt2');
+
+saveChanges.addEventListener('click',Addnewproduct);

@@ -22,7 +22,6 @@ main.innerHTML = pokeItems.map(function(item, index){
     `
 })
 
-
 // Search Section.
 
 // function to update the 'main' element with the provided items in array.
@@ -30,10 +29,13 @@ displayItems(pokeItems)
 
 let searchBox = document.querySelector('form');
 // Functionailty added to search button.'keyup' used to search after every character entered into search input instead of having to click submit or search button. prevent.preventDefault() to handle submission in a custom manner to update without having to reload the page again.
-searchBar.addEventListener('keyup', function(event){
+
+searchButt.addEventListener('click', function(event){
     event.preventDefault();
+
     // search bar given variable and made the input value case insensitive.
     let search = document.getElementById('searchBar').value.toLowerCase();
+
     // Filtering through the array of pokeItems for the object names both uppercase and lowercase and the method 'includes' to make sure the search accomodates the lowercase search.
     let filteredSearch = pokeItems.filter(item => item.name.toLowerCase().includes(search));
 

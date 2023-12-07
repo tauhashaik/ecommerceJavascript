@@ -2,10 +2,11 @@
 let pokeItems = [];
 
 // Constructor fucntion to create objects that will be inserted into the array
-function Createobjects(id, name, description,price,url){
+function Createobjects(id, name, description,quantity,price,url){
     this.id = id,
     this.name = name,
     this.description = description,
+    this.quantity = quantity,
     this.price = price,
     this.url = url
 }
@@ -13,23 +14,23 @@ function Createobjects(id, name, description,price,url){
 
 
 // Creation of plush objects using the constructor function to be pushed into the array.
-let plush1 = new Createobjects(1, 'Kimono Pikachu', 'Limited Edition Pikachu in a Kimono from Japanese collection', 800, 'https://i.postimg.cc/XN55NbtS/Pikachu-kimono.jpg')
+let plush1 = new Createobjects(1, 'Kimono Pikachu', 'Limited Edition Pikachu in a Kimono from Japanese collection',1, 800, 'https://i.postimg.cc/XN55NbtS/Pikachu-kimono.jpg')
 
-let plush2 = new Createobjects(2, 'Cyndaquil', 'Soft fluffy Cyndaquil plushie to comfort your saddess days', 400, 'https://i.postimg.cc/2S0b98Lv/Cyndaquil.jpg')
+let plush2 = new Createobjects(2, 'Cyndaquil', 'Soft fluffy Cyndaquil plushie to comfort your saddest days',1, 400, 'https://i.postimg.cc/2S0b98Lv/Cyndaquil.jpg')
 
-let plush3 = new Createobjects(3, 'Leafeon', 'Leafeon is the cutest Pokémon in the world', 600, 'https://i.postimg.cc/pX8Hr0J6/Leafeon.jpg')
+let plush3 = new Createobjects(3, 'Leafeon', 'Leafeon is the cutest Pokémon in the world', 1, 600, 'https://i.postimg.cc/pX8Hr0J6/Leafeon.jpg')
 
-let accs1 = new Createobjects( 4, 'Charmander watch x Fossil', 'Be on time with Charmander at your side', 2000, 'https://i.postimg.cc/90ChDQ60/Charmander-watch.jpg')
+let accs1 = new Createobjects( 4, 'Charmander watch x Fossil', 'Be on time with Charmander at your side',1, 2000, 'https://i.postimg.cc/90ChDQ60/Charmander-watch.jpg')
 
-let accs2 = new Createobjects( 5, 'Mimikyu Necklace', 'Shine with Pikachu around your neck', 1000, 'https://i.postimg.cc/pVJvgKjF/Pikachu-necklace.jpg')
+let accs2 = new Createobjects( 5, 'Mimikyu Necklace', 'Shine with Pikachu around your neck',1, 1000, 'https://i.postimg.cc/pVJvgKjF/Pikachu-necklace.jpg')
 
-let accs3 = new Createobjects( 6, 'Pikachu Keychain', 'Have your keys in style with the latest Pikachu keychain', 1000, 'https://i.postimg.cc/NFDwmwt4/Pikachu-Keychain.jpg')
+let accs3 = new Createobjects( 6, 'Pikachu Keychain', 'Have your keys in style with the latest Pikachu keychain',1, 1000, 'https://i.postimg.cc/NFDwmwt4/Pikachu-Keychain.jpg')
 
-let clothe1 = new Createobjects( 7, 'Dragonite T-Shirt', 'Comfortable and stylish T-shirt', 850, 'https://i.postimg.cc/Kjyw8cKz/Dragonite-Tshirt.jpg')
+let clothe1 = new Createobjects( 7, 'Dragonite T-Shirt', 'Comfortable and stylish T-shirt',1, 850, 'https://i.postimg.cc/Kjyw8cKz/Dragonite-Tshirt.jpg')
 
-let clothe2 = new Createobjects( 8, 'Team Rocket Anorak Jacket', 'Keep warm in style', 2500, 'https://i.postimg.cc/65PVrj0V/Team-Rocket-Anorak.jpg')
+let clothe2 = new Createobjects( 8, 'Team Rocket Anorak Jacket', 'Keep warm in style',1, 2500, 'https://i.postimg.cc/65PVrj0V/Team-Rocket-Anorak.jpg')
 
-let clothe3 = new Createobjects( 9, 'Articuno Jacket', 'Keep warm with this jacket while still looking cool', 2500, 'https://i.postimg.cc/Ss9H4Yx3/Articuno-Jacket.jpg')
+let clothe3 = new Createobjects( 9, 'Articuno Jacket', 'Keep warm with this jacket while still looking cool',1, 2500, 'https://i.postimg.cc/Ss9H4Yx3/Articuno-Jacket.jpg')
 
 
 
@@ -51,13 +52,13 @@ let table = document.querySelector('table');
 function toProducts(){
     let products = pokeItems.map(function(item, index){
         return `
-            
         <tr>
             <td style = "color: yellow; background-color: red; padding-top: 40px">${item.id}</td>
             <td style = "color: yellow; background-color: black; font-size: 20px; padding-top: 40px">${item.name}</td>
             <td style = "color: yellow; background-color: red; font-size: 20px; padding-top: 40px">${item.description}</td>
             <td style = "color: yellow; background-color: black; font-size: 20px; padding-top: 40px">R${item.price}</td>
             <td style = "color: yellow; background-color:black"><img id='adminImg' src="${item.url}"></td>
+            <td style = "color: yellow; background-color: red; font-size: 20px; padding-top: 40px">${item.quantity}</td>
             <td style = "color: yellow; background-color: red; padding-top: 40px"><button id="adminButt">Edit</button></td>
             <td style = "color: yellow; background-color: red; padding-top: 40px"><button id="adminButt" class ='deleteBtn' value = '${index}'>Delete</button></td>
         </tr>

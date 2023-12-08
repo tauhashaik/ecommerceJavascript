@@ -120,14 +120,18 @@ saveChanges.addEventListener('click',Addnewproduct);
 
 // Edit Modal section.
 
-let editBtn = document.querySelector('.editBtn');
+// let editBtn = document.querySelector('.editBtn');
 let editConfirm = document.getElementById('editButt');
+
+
 
 editConfirm.addEventListener('click', function(){
     let name = document.getElementById('input#1').value;
     let description = document.getElementById('input#2').value;
     let price = document.getElementById('input#3').value;
     let url = document.getElementById('input#4').value;
+    document.getElementById('editButt')
+    let index = document.getElementById('exampleModal1').getAttribute("data-index");
 
     if(name && description && price && url){
 
@@ -143,3 +147,40 @@ editConfirm.addEventListener('click', function(){
     }
     toProducts();
 });
+
+// function editProd(index){
+//     let name = document.getElementById('input#1').value;
+//     let description = document.getElementById('input#2').value;
+//     let price = document.getElementById('input#3').value;
+//     let url = document.getElementById('input#4').value;
+
+//     name = pokeItems[index].name
+//     description = pokeItems[index].description
+//     price = pokeItems[index].price
+//     url = pokeItems[index].url
+
+//     document.getElementById('exampleModal1').setAttribute("data-index",index)
+// }
+
+// function savedEditProd(){
+//   let  name = document.getElementById('input#1').value.trim();
+//   let description = document.getElementById('input#2').value.trim();
+//   let price = document.getElementById('input#3').value.trim();
+//   let url = document.getElementById('input#4').value.trim();
+//   let pos = document.getElementById('exampleModal1').getAttribute("data-index");
+
+//   pokeItems[pos].name = name;
+//   pokeItems[pos].description = description;
+//   pokeItems[pos].price = price;
+//   pokeItems[pos].url = url;
+
+//   itemSave();
+//   toProducts();
+// }
+
+// editConfirm.addEventListener('click', function(){
+//     if(event.target.classList.contains(editBtn)){
+//         editProd(event.target.value)
+//     }
+//     itemSave();
+// })

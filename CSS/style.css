@@ -400,3 +400,79 @@ button[type="submit"]:hover {
 #contactBody{
     background-color: black;
 }
+
+/* Media queries for Landing Page. */
+
+@media only screen and (max-width: 720px) {
+    #homeHeader {
+        font-size: 80px;
+    }
+
+    #slogan {
+        font-size: 25px;
+    }
+
+    #navBar {
+        padding: 10px;
+    }
+
+    #Logo {
+        margin-right: 150px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    #homeHeader {
+        font-size: 30px;
+    }
+    #homeBody{
+        background-image: none;
+        background-color: whitesmoke!important;
+    }
+
+    #spanPic{
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    #slogan {
+        font-size: 20px;
+    }
+
+    #navBar {
+        padding: 5px;
+    }
+
+    #Logo {
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    #Logo {
+        width: 30px;
+        height: 30px; 
+    }
+    #navText {
+        font-size: 14px;
+    }
+    #searchBar {
+        width: 80%; 
+    }
+    #sortButt {
+        font-size: 14px;
+    }
+    .card{
+        width: 100%;
+    }
+    img{
+        width: 30px !important;
+        height: 30px !important;
+    }
+}

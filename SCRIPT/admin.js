@@ -59,7 +59,7 @@ function toProducts(){
             <td style = "color: yellow; background-color: black; font-size: 20px; padding-top: 40px">R${item.price}</td>
             <td style = "color: yellow; background-color:black"><img id='adminImg' src="${item.url}"></td>
             <td style = "color: yellow; background-color: red; font-size: 20px; padding-top: 40px">${item.quantity}</td>
-            <td style = "color: yellow; background-color: red; padding-top: 40px"><button id="adminButt">Edit</button></td>
+            <td style = "color: yellow; background-color: red; padding-top: 40px"><button id="adminButt" class = 'editBtn' data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button></td>
             <td style = "color: yellow; background-color: red; padding-top: 40px"><button id="adminButt" class ='deleteBtn' value = '${index}'>Delete</button></td>
         </tr>
         `
@@ -97,7 +97,7 @@ table.addEventListener('click',function(){
     }
 });
 
-// Modal Section.
+// Add Modal Section.
 
 function Addnewproduct(){
     let name = document.getElementById('input1').value
@@ -116,3 +116,30 @@ function Addnewproduct(){
 let saveChanges=document.getElementById('adminButt2');
 
 saveChanges.addEventListener('click',Addnewproduct);
+
+
+// Edit Modal section.
+
+let editBtn = document.querySelector('.editBtn');
+let editConfirm = document.getElementById('editButt');
+
+editConfirm.addEventListener('click', function(){
+    let name = document.getElementById('input#1').value;
+    let description = document.getElementById('input#2').value;
+    let price = document.getElementById('input#3').value;
+    let url = document.getElementById('input#4').value;
+
+    if(name && description && price && url){
+
+        pokeItems[index].name = name;
+        pokeItems[index].description = description;
+        pokeItems[index].price = price;
+        pokeItems[index].url = url;
+
+        localStorage.setItem(pokeItems, JSON.stringify(pokeItems));
+    }
+    else {
+        alert('Please fill in all fields');
+    }
+    toProducts();
+});

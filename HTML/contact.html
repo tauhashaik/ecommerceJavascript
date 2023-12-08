@@ -10,8 +10,76 @@
 
     <title>Contact</title>
 </head>
-<body>
-    <main></main>
+<body id="contactBody">
+
+    <nav id="navBar" class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"><img id="Logo" src="https://i.postimg.cc/XqDw5QRC/Logo2.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" aria-current="page" href="/index.html">HOME</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" href="/HTML/products.html">PRODUCTS</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" href="/HTML/about.html">ABOUT</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" href="/HTML/contact.html">CONTACT</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" href="/HTML/checkout.html">CHECKOUT</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="navText" class="nav-link active" href="/HTML/admin.html">ADMIN</a>
+              </li>
+              
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="searchBar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="searchButt" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <h1 id="homeHeader">POOKIEM<span style=" color: blue;"><img style="width: 90px; height: 85px; margin-bottom: 19px;" src="/ImagesJavascript/Logo.png"></span>N</h1>
+    <main>
+       <center><form
+  action="https://formspree.io/f/myyqrjan"
+  method="POST"
+>
+<br>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="Surname">Surname:</label>
+<input type="text" id="surname " name="surname">
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" required></textarea>
+
+<input id="submit" type="submit" value="Submit">
+</form>
+</center> 
+
+    </main>
     
 
 

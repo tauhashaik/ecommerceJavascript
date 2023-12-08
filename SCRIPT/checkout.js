@@ -2,7 +2,7 @@
 let purchase = JSON.parse(localStorage.getItem('purchase'))
 
 let table = document.querySelector('table');
-
+let main = document.querySelector('main')
 // mapping through the purchase array and displaying it to the table in the HTML.
 function callData(){
     table.innerHTML = purchase.map(function(item, index){
@@ -41,8 +41,7 @@ table.addEventListener('click',function(){
 // Spinner section.
 
 if (purchase.length === 0 ){
-    
-    main.innerHTML = `<div id="spinny" class="spinner-border text-danger" role="status">
+    main.innerHTML += `<div id="spinny" class="spinner-border text-danger" role="status">
     <span class="visually-hidden">Loading...</span>
     </div>`
     

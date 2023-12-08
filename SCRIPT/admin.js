@@ -99,7 +99,7 @@ table.addEventListener('click',function(){
 
 // Add Modal Section.
 
-function Addnewproduct(){
+function Addnewproduct(){   
     let name = document.getElementById('input1').value
     let description = document.getElementById('input2').value
     let price = document.getElementById('input3').value
